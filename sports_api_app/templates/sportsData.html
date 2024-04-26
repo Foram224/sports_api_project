@@ -30,24 +30,16 @@
             <th>league_name</th> 
             <th>league_type</th>
             <th>league_country</th>
-            <th>Seasons_year</th>
-            <th>Seasons_start</th>
-            <th>Seasons_end</th>
-       
         </tr>
     </thead>
     <tbody id="tableBody">
         <!-- Table body will be populated dynamically -->
         {% for item in response_data.response %}
-           
             <tr>
                 <td>{{item.league.id}}</td>
                 <td>{{item.league.name}}</td> 
                 <td>{{item.league.type}}</td>
-                <td>{{item.country.name}}</td>
-                <td>{{item.seasons.year}}</td>
-                <td>{{item.seasons.start}}</td>
-                <td>{{item.seasons.end}}</td>           
+                <td>{{item.country.name}}</td>        
             </tr>
         {% endfor %}
     </tbody>
