@@ -51,17 +51,5 @@
         {% endfor %}
     </tbody>
 </table>
-
-<h2>Edit Data</h2>
-<form action="{% url 'edit_data' %}" method="post">
-    {% csrf_token %}
-    <label for="field1">Field 1:</label>
-    <input type="text" id="field1" name="field1" value="{{ single_data.field1 }}">
-    <label for="field2">Field 2:</label>
-    <input type="text" id="field2" name="field2" value="{{ single_data.field2 }}">
-    <!-- Add other fields as needed -->
-    <button type="submit">Save</button>
-</form>
-
 </body>
 </html>
