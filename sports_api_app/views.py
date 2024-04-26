@@ -30,16 +30,9 @@ def sportsdata(request):
         obj = sportsData(league_id = league_id,league_name = league_name,league_type = league_type,league_country = league_country,league_season_year = league_season_year,league_season_end = league_season_end)
         obj.save()
         
-        print("All data saved successfully.")
+        print("Data saved successfully.")
     return render(request, 'sportsData.html', {'response_data':response_data})
    
 
-def display(request):
-    response_data = [
-        {'id': 1, 'name': 'John Doe', 'email': 'john@example.com'},
-        {'id': 2, 'name': 'Jane Smith', 'email': 'jane@example.com'},
-        {'id': 3, 'name': 'Alice Johnson', 'email': 'alice@example.com'}
-    ]
-    return render(request, 'display.html', {'response_data': response_data})
-   
+  
    
