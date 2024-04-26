@@ -14,7 +14,3 @@ class sportsData(models.Model):
     def __str__(self):
         return self.league_id
     
-
-class ss(models.Model):
-    name = models.CharField(max_length=50)
-    pp = models.CharField(max_length=50)
