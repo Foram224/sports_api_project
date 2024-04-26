@@ -1,16 +1,9 @@
 from django.shortcuts import render
-import http.client
 
 # Create your views here.
 import requests
 import http.client
-#from .models import SportLeagueData1
-
 from .models import sportsData
-
-
-def hello():
-    render('','hello.html')
 
 def sportsdata(request):
     
@@ -24,10 +17,6 @@ def sportsdata(request):
 
     response = requests.request("GET", url, headers=headers, data=payload)
     response_data = response.json()
-    print("All data saved successfully.")
-    print(type(response_data))
-    #print("response::::,,",response_data.response)
-    #print(response_data["response"])
     for item in response_data["response"]:
         print("ii:::",item["league"]["id"])
         league_id = item["league"]["id"]
@@ -40,6 +29,8 @@ def sportsdata(request):
 
         obj = sportsData(league_id = league_id,league_name = league_name,league_type = league_type,league_country = league_country,league_season_year = league_season_year,league_season_end = league_season_end)
         obj.save()
+        
+        print("All data saved successfully.")
     return render(request, 'sportsData.html', {'response_data':response_data})
    
 
