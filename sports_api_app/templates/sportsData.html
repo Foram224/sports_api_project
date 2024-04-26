@@ -30,6 +30,9 @@
             <th>league_name</th> 
             <th>league_type</th>
             <th>league_country</th>
+            <th>Seasons_year</th>
+            <th>Seasons_start</th>
+            <th>Seasons_end</th>
        
         </tr>
     </thead>
@@ -44,12 +47,12 @@
                 <td>{{item.country.name}}</td>
                 <td>{{item.seasons.year}}</td>
                 <td>{{item.seasons.start}}</td>
-                <td>{{item.seasons.end}}</td>
-                <td><a href="{% url 'edit_data' item.league.id %}">Edit</a></td>
-           
+                <td>{{item.seasons.end}}</td>           
             </tr>
         {% endfor %}
     </tbody>
 </table>
+
+
 </body>
 </html>
